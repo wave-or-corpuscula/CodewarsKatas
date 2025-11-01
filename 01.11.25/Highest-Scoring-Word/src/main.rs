@@ -26,8 +26,12 @@ fn high(input: &str) -> &str {
     words[max_ind]
 }
 
+fn high_but_not_mine(input: &str) -> &str {
+    input.split_ascii_whitespace().rev().max_by_key(|s| s.chars().map(|c| c as u16 - 96).sum::<u16>()).unwrap_or("")
+}
+
 fn main() {
     let word = "aa b";
-
+    println!("{}", high_but_not_mine(word));
     println!("With word: \'{}\', result is: {}", word, high(word));
 }
