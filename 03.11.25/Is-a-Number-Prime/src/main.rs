@@ -32,9 +32,16 @@ fn is_prime(x: i64) -> bool {
         }
         i += 6;
     }
-
     true
 }
+
+
+// Красивое, но не мое
+fn is_prime_from_code_wars(x: i64) -> bool {
+    let last = (x as f64).sqrt() as i64 + 1;
+    x > 1 && (2..last).all(|d| x % d != 0)
+}
+
 
 fn main() {
     println!("{}", is_prime(4));
