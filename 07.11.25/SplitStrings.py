@@ -39,7 +39,7 @@ def timer(func, n: int, tests: list):
 
     for _ in range(n):
         for test in tests:
-            func(test)
+            func(test.copy())
     
     end = time.perf_counter()
     print(f"func: {func}, time: {end - start}")
